@@ -1,0 +1,24 @@
+# lambda function
+a = 2
+b = 4
+def power(a,b):
+    return a**b
+print(power(2,4))
+
+#by using lambda function
+c = lambda a,b : a**b
+print(c(2,4))
+
+add = lambda a,b,c : a+b+c
+print(add(2,5,6))
+
+c_to_f = lambda c : (9/5)*c+32
+print(c_to_f(45))
+
+finding_max = lambda x,y : x if x > y else y
+print(finding_max(20,50))
+
+s = 'pwskills,jatin'
+find_length = lambda s : len(s)
+print(find_length(s))
+
