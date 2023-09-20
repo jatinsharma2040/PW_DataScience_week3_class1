@@ -1,0 +1,48 @@
+# Generator function
+def test_fib(n):
+    a,b = 0,1
+    for i in range(n):
+        yield a  # yield is used to generate a Generator function.
+        a,b = b,a+b
+print(test_fib(10))
+
+for i in test_fib(10):
+    print(i)
+
+#By using while loop
+def test_fib1():
+    a,b=0,1
+    while True:
+        yield a
+        a,b = b,a+b
+
+fib = test_fib1()
+for i in range(10):
+    print(next(fib))
+
+
+a= 'jatin'
+for i in a:
+    print(i)
+
+print(next(a))   #string is not an iterator
+
+a1 = iter(a)
+print(next(a1))
+print(next(a1))
+print(next(a1))
+print(next(a1))
+print(next(a1))
+
+
+def count_test(n):
+    count = 1
+    while count <=n:
+        yield count
+        count = count + 1
+
+count = count_test(10)
+for i in count:
+    print(i)
+
+print(type(count))
