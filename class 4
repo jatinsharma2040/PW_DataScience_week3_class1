@@ -1,0 +1,44 @@
+#Map,Reduce and Filter function
+
+a = [2,3,4,5,6,8,9]
+def test(a):
+    a1 = []
+    for i in a:
+        a1.append(i**2)
+    return a1
+
+print(test(a))
+#map function
+def sq(x):
+    return x**2
+
+print(map(sq,a))
+print(list(map(sq,a)))
+
+c = lambda a:a**2
+print(c(88))
+
+print(list(map(lambda d:d**2,a)))
+
+l=[1,2,3,4,5]
+l1=[6,7,8,9,3]
+
+def add(x,y):
+    return x+y
+print(list(map(add ,l,l1)))
+
+print(list(map(lambda x,y:x+y , l,l1)))
+
+s = 'physicswallah'
+print(list(map(lambda x:x.upper() ,s)))
+
+#Reduce function
+from functools import reduce
+l = [1,2,3,4,5,6,7,8,9]
+print(reduce(lambda x,y:x+y,l))
+print(reduce(lambda x,y:x*y ,l))
+print(reduce(lambda x,y:x if x > y else y,l))
+print(list(filter(lambda x:x%2==1,l)))
+
+l1=[-1,-2,3,-4,5,-6,7,-8,9]
+print(list(filter(lambda x : x<0 ,l1)))
